@@ -1,0 +1,8 @@
+# 辣眼睛
+.DS_store
+
+node_modules
+dist
+.idea
+
+npm-debug.log

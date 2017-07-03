@@ -1,0 +1,33 @@
+{
+  "name": "air",
+  "version": "1.0.0",
+  "description": "web os",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack -d --watch",
+    "build": "webpack -p",
+    "heroku-postbuild": "webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deasel/air.git"
+  },
+  "keywords": [],
+  "author": "deasel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deasel/air/issues"
+  },
+  "homepage": "https://github.com/deasel/air#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "webpack": "^3.0.0"
+  },
+  "dependencies": {
+    "mithril": "^1.1.1"
+  }
+}
