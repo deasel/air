@@ -1,4 +1,7 @@
 import m from 'mithril'
-import HelloWorld from './component/hellowrold'
 
-m.mount(document.getElementById('main'), HelloWorld)
+import Desktop from './route/desktop'
+
+m.route(document.getElementById('main'), '/', {
+  '/': Desktop,
+})
