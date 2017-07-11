@@ -1,4 +1,3 @@
-class Model{
-  constructor(){}
+class Model {
 }
 export default Model

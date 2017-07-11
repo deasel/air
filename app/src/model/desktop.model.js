@@ -1,6 +1,6 @@
 export default {
   text: 'desktop',
-  changeText: function(){
+  changeText() {
     this.text = 'desktop change'
-  }
+  },
 }
