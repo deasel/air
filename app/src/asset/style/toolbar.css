@@ -1,0 +1,20 @@
+.toolbar{
+  position: fixed;
+  margin:auto;
+  left:0;
+  right:0;
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+  background-color: rgba(0,0,0,0.2);
+  padding: .2rem .4rem;
+  text-align: center;
+}
+
+.toolbar-position-bottom{
+  bottom:0;
+}
+
+.toolbar-wrap{
+  display: inline-block;
+  position: relative;
+}

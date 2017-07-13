@@ -1,9 +1,10 @@
 import m from 'mithril'
 
+import {isObject} from '../util/type'
 // import Model from '../extend/model.extend'
 
 
-const { assign } = Object
+const {assign} = Object
 const handleList = ['oninit', 'oncreate', 'onupdate', 'onbeforeremove', 'onremove', 'onbeforeupdate', 'view']
 
 // 将自定义的model对象视为一个功能集合，合并到继承自Model类的子类中
@@ -14,17 +15,40 @@ const handleList = ['oninit', 'oncreate', 'onupdate', 'onbeforeremove', 'onremov
 //   return new Target()
 // }
 
-m.component = (originComp = {}, originModel = {}) => {
-  const comp = assign({}, originComp)
+/**
+ *
+ *  @param  {Array}   originModel
+ *  @param  {Object}  originComp
+ */
+m.component = (originModel, originComp) => {
 
-  // const model = mixin(originModel)
-  handleList.forEach((name) => {
-    if (originComp[name] !== undefined) {
-      comp[name] = vnode => originComp[name].bind(null, vnode, originModel)()
-    }
-  })
+	let model = {}
+	if (isObject(originModel)) {
+    originComp = originModel
+  } else {
+		originModel.map((item) => {
+			model = assign(model, item)
+		})
+	}
 
-  return comp
+	const comp = assign({}, originComp)
+
+	handleList.forEach((name) => {
+
+		if (originComp[name] !== undefined) {
+
+			comp[name] = function(vnode){
+
+				if(vnode.attrs) model = assign(model, vnode.attrs)
+				return originComp[name].bind(null, vnode, model)()
+
+			}
+
+		}
+
+	})
+
+	return comp
 }
 
 export default m
