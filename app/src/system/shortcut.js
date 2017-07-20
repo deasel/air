@@ -6,9 +6,9 @@ import Model from '../model/shortcut.model'
 
 const {assign} = Object
 
-export default m.component([Model], {
-  view: (vnode, model) => {
+export default m.component(Model, {
 
+  view: (vnode, model) => {
     return m('span.shortcut', {
       style: 'background-image:url(' + IMAGE_PATH + model.icon + ')',
       title: model.name,

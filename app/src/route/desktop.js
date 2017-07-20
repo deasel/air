@@ -1,17 +1,18 @@
 import m from '../extend/mithril.extend'
 
-import style from '../asset/style/desktop.css'
+import '../asset/style/desktop.css'
 
 import Toolbar from '../system/toolbar'
 import desktopModel from '../model/desktop.model'
 
+import PanelFactory from '../system/panel'
+const Panel = PanelFactory()
 
 export default m.component([desktopModel], {
   view: (vnode, model) => {
-    return (
-      <div class="desktop">
-        <Toolbar></Toolbar>
-      </div>
-    )
+    return m('div.desktop', [
+      m(Panel, {width:10}),
+      m(Toolbar)
+    ])
   },
 })

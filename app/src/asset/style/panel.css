@@ -1,0 +1,6 @@
+.panel{position: fixed;border:1px solid red; border-radius: .3rem}
+
+.panel-header{height:35px;min-width: 5rem}
+
+.panel-max{top:0; right:0; bottom:0;right:0; z-index: 9999}
+.panel-mini{display: none}

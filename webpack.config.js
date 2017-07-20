@@ -1,5 +1,4 @@
 var path = require('path')
-//TODO: 插件运行报错，暂时不使用
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
@@ -10,7 +9,7 @@ module.exports = {
 		publicPath: '/air/app/dist/',
 		filename: 'build.js',
 	},
-	devtool: 'source-map',
+	devtool: '#source-map',
 	module: {
 		loaders: [{
 			test: /\.js$/,
@@ -18,12 +17,16 @@ module.exports = {
 			loader: 'babel-loader',
 		}, {
 			test: /\.css$/,
-			// use: ExtractTextPlugin.extract({
-			// 	fallback: "style-loader",
-			// 	use: "css-loader"
-			// })
-      // use: ExtractTextPlugin.extract(['style-loader', 'css-loader'])
-      use: ['style-loader', 'css-loader']
+			include: /node_modules/,
+			loader: ExtractTextPlugin.extract(
+				'css-loader?sourceMap'
+			)
+		}, {
+			test: /\.css$/,
+			exclude: /node_modules/,
+			loader: ExtractTextPlugin.extract(
+				'css-loader?sourceMap&modules&localIdentName=[local]'
+			),
 		}, {
 			test: /\.(png|svg|jpg|gif)$/,
 			use: [
@@ -37,6 +40,9 @@ module.exports = {
 		}]
 	},
 	plugins: [
-		// new ExtractTextPlugin("styles.css")
+    new ExtractTextPlugin('build.css', {
+      disable: false,
+      allChunks: true,
+    })
 	]
 }

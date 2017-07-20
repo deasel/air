@@ -4,7 +4,7 @@ import '../asset/style/toolbar.css'
 import Model from '../model/toolbar.model'
 import Shortcut from '../system/shortcut'
 
-export default m.component([Model], {
+export default m.component(Model, {
   view: (vnode, model) => {
     const {position, width, height, shortcuts} = model
 

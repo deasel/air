@@ -1,4 +1,5 @@
 export default {
+  namespace: 'shortcut',
   /**
    * 图标
    * @type {String}   图片路径

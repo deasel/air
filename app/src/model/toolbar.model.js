@@ -1,4 +1,5 @@
 export default {
+  namespace: 'toolbar',
   /**
    * 定位信息
    * @type {String}  'left', 'right', 'bottom'
