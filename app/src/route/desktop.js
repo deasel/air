@@ -11,7 +11,7 @@ const Panel = PanelFactory()
 export default m.component([desktopModel], {
   view: (vnode, model) => {
     return m('div.desktop', [
-      m(Panel, {width:10}),
+      m(Panel, {width: 10, height:8}),
       m(Toolbar)
     ])
   },

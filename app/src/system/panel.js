@@ -1,4 +1,4 @@
-import m from '../extend/mithril.extend'
+ import m from '../extend/mithril.extend'
 
 import '../asset/style/panel.css'
 
@@ -14,34 +14,24 @@ export default m.factory({
 		height: 0,
 		left: 0,
 		top: 0,
-		mode: 'normal',
+		mode: '',
 		content: '',
-		color: '',
-		onResize: function() {
+		onResize: function(mark) {
 
-		},
-		onClick: function(){
-			this.state.color = '#' + '012345'.split('').map(()=>{
-				return (Math.random()*9)>>>0
-			}).join('')
+			this.state.mode = mark
 		}
 	},
 
 	view: (vnode) => {
-		// const {attrs, state} = vnode
-		// vnode.state = Object.assign(state, attrs)
-		const {mode, onResize, title, content, color, onClick} = vnode.state
+		const {mode, onResize, title, content, onClick} = vnode.state
 
-		return m('div.panel' + (mode === 'max' || mode === 'mini' ? '.panel-' + mode : ''), {
-			style: parseStyle(vnode.state),
-			onclick: onClick.bind(vnode)
+		return m('div.panel' + (mode ? '.panel-' + mode : ''), {
+			style: parseStyle(vnode.state)
 		}, [
-			m('div.panel-header', {
-				style: 'background:' + color
-			}, [
-				m('span.panel-handlebar', ['close', 'mini', 'max'].map((mark) => {
+			m('div.panel-header',[
+				m('span.panel-button-bar', ['close', 'mini', 'max'].map((mark) => {
 					return m('span.panel-button.panel-button-' + mark, {
-						onclick: onResize.bind(vnode)
+						onclick: onResize.bind(vnode, mark)
 					})
 				})),
 				title ? m('span.panel-title', title) : ''

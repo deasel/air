@@ -1,6 +1,13 @@
-.panel{position: fixed;border:1px solid red; border-radius: .3rem}
+.panel{position: fixed;border:1px solid #c5c5c5; border-radius: .3rem;}
 
-.panel-header{height:35px;min-width: 5rem}
-
-.panel-max{top:0; right:0; bottom:0;right:0; z-index: 9999}
+.panel-close{display: none}
+.panel-max{top:0; left:0; bottom:0;right:0; z-index: 9999; width:100%!important; height: 100%!important;}
 .panel-mini{display: none}
+
+.panel-header{height:35px;min-width: 5rem; border-bottom: 1px solid #c3c3c3; background-color: #f6f6f6}
+
+.panel-button-bar{display: inline-block; padding: .3rem .5rem;}
+.panel-button{display: inline-block; width:.7rem; height:.7rem;border-radius: .7rem; cursor: pointer;margin-right: .5rem}
+.panel-button-close{background-color: #ec6b60}
+.panel-button-mini{background-color: #f5c250}
+.panel-button-max{background-color: #63c856}
