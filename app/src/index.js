@@ -1,4 +1,12 @@
-import m from 'mithril'
-import HelloWorld from './component/hellowrold'
+import m from './extend/mithril.extend'
 
-m.mount(document.getElementById('main'), HelloWorld)
+import Desktop from './route/desktop'
+
+import 'bulma/css/bulma.css'
+import './asset/style/base.css'
+
+m._debug = true
+
+m.route(document.getElementById('main'), '/', {
+  '/': Desktop,
+})

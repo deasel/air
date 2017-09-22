@@ -1,0 +1,27 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb-base",
+  "plugins": [
+    "import"
+  ],
+  "rules": {
+    "no-empty": 2,  // 禁止空语句块
+    "default-case": 2,    //需要default在SwitchCase
+    "comma-spacing": 2,   //逗号后使用空格
+    "block-spacing": 2,   //单行代码块大括号后需要一个空格
+    "indent": [2, 2],   //默认两个空格
+    "no-eval": 2,     //不适用eval
+    "no-extra-bind": 2,    //不适用不必要的bind
+    "no-loop-func": 2,   //循环内不定义非执行的函数
+    "no-new-wrappers": 2,  //原始类型不使用`new`
+    "no-extra-semi": 2,   // 禁止不必要的分号
+    "yoda": [2, "never"],   // 要求或禁止 “Yoda” 条件
+    "strict": 0,    // 要求或禁止使用严格模式指令
+    "semi": [2, "never"]    //分号控制
+  },
+  "globals": {
+    "window": true,
+    "chrome": true,
+    "document": true
+  }
+}
