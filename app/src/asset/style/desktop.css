@@ -1,4 +1,11 @@
 .desktop{
+  padding-top:25px;
   height: 100%;
-  margin-bottom: 3rem;
+}
+.desktop-wrap{
+  height:100%;
+  padding-bottom:48px;
+}
+.desktop-view{
+  height:100%;
 }

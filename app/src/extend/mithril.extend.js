@@ -105,7 +105,7 @@ m.factory = (opts) => {
 m._debug = false
 const debugHandle = ['error', 'log', 'warn']
 debugHandle.forEach((name) => {
-	return m._debug ? console[name] : NOOP
+	m[name] = m._debug === true ? console[name] : NOOP 
 })
 
 //debug模式开启式，启用console等调试方法，否则直接返回空函数

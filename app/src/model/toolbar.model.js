@@ -1,21 +1,9 @@
 export default {
   namespace: 'toolbar',
-  /**
-   * 定位信息
-   * @type {String}  'left', 'right', 'bottom'
-   */
-  position: 'bottom',
 
-  width: 30,
+  //系统logo图标
+  avatar: '../app/dist/image/husky.png',
 
-  height: 3,
-
-  /**
-   * application集合
-   * @type {Array}
-   */
-  shortcuts: [{
-    icon: 'safari-icon.png',
-    name: 'safari'
-  }],
+  //小工具合集配置项
+  miniOptions: []
 }

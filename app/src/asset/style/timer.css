@@ -1,0 +1,37 @@
+.timer{
+  display: block;
+  height:25px;
+  position: relative;
+}
+.timer-view{
+  padding: 4px 10px;
+}
+.timer-menu{
+  display: none; 
+}
+.timer:hover .timer-view, .timer-menu-item:hover{
+  background: #3f94f9;
+  color: #fefefe;
+}
+.timer:hover .timer-menu{
+  display: block;
+  border: 1px solid #ccc;
+  position: absolute;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 200px;
+  right: 0;
+  top: 24px;
+  padding:5px 0;
+}
+.timer-menu-item{
+  cursor: pointer;
+  display: inline-block;
+  width: 198px;
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 15px;
+}
+.timer-menu-item i{
+  margin: 4px 5px 0 0;
+}

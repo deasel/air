@@ -1,3 +1,4 @@
+import m from '../extend/mithril.extend'
 import {isString, isFunction} from '../util/type'
 
 const Store = {}

@@ -15,11 +15,11 @@ export default {
    */
   container: [],
 
-  onCreate: function(opts){
-    if(!opts.id){
-      m.error('model/desktop.model', 'ID缺失')
-      return
-    }
-    this.container.push(opts)
-  }
+  // onCreate: function(opts){
+  //   if(!opts.id){
+  //     m.error('model/desktop.model', 'ID缺失')
+  //     return
+  //   }
+  //   this.container.push(opts)
+  // }
 }

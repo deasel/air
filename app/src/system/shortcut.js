@@ -4,8 +4,6 @@ import '../asset/style/shortcut.css'
 import {IMAGE_PATH} from '../util/constant'
 import Model from '../model/shortcut.model'
 
-const {assign} = Object
-
 export default m.component(Model, {
 
   view: (vnode, model) => {

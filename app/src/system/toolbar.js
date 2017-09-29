@@ -1,22 +1,25 @@
 import m from '../extend/mithril.extend'
 import '../asset/style/toolbar.css'
+import Timer from '../tool/timer'
 
 import Model from '../model/toolbar.model'
-import Shortcut from '../system/shortcut'
 
 export default m.component(Model, {
   view: (vnode, model) => {
-    const {position, width, height, shortcuts} = model
+    return m('div.toolbar', [
+      
+      //logo
+      m('span.toolbar-avatar', {
+        style: 'background-image:url(' + model.avatar + ')'
+      }),
 
-    return m('div.toolbar.toolbar-position-' + model.position,
-      {
-        style: 'width:' + width + 'rem;height:' + height + 'rem;'
-      },
-      m('span.toolbar-wrap',
-        shortcuts.map((opts) => {
-          return m(Shortcut, opts)
-        })
-      )
-    )
+      //app选项区域
+      m('span.toolbar-app-menu'),
+
+      //小工具
+      m('span.toolbar-mini-col', [
+        m(Timer)
+      ])
+    ])
   }
 })
