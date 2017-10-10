@@ -1,5 +1,5 @@
 /**
- * 【mini工具集】
+ * 【mini工具集】  时间工具
  */
 import m from '../extend/mithril.extend'
 import '../asset/style/timer.css'
@@ -73,20 +73,23 @@ export default m.component(Model, {
           {text: '显示年月日',name: 'isShowDate'},
           {text: '显示星期',name: 'isShowWeek'},
           {text: '使用24小时模式',name: 'is24Hours'}
-        ].map((item, index) => {
+        ].map(
 
-          let param = {};
-          param[item.name] = !model[item.name]
-          return m('span.timer-menu-item', {
-            onclick: model.onChangeMode.bind(model, param)
-          }, [
-            m('i.fa.fa-check', {
-              style: 'visibility:' + (model[item.name] ? 'visible' : 'hidden')
-            }),
-            m('span', item.text)
-          ])
+          (item, index) => {
+            let param = {};
+            param[item.name] = !model[item.name]
+            return m('span.timer-menu-item', {
+              onclick: model.onChangeMode.bind(model, param)
+            }, [
+              m('i.fa.fa-check', {
+                style: 'visibility:' + (model[item.name] ? 'visible' : 'hidden')
+              }),
+              m('span', item.text)
+            ])
 
-        })
+          }
+
+        )
       )
 
     ])

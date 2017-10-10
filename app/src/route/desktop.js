@@ -4,11 +4,11 @@ import '../asset/style/desktop.css'
 
 import Docker from '../system/docker'
 import Toolbar from '../system/toolbar'
-import PanelFactory from '../system/panel'
+// import PanelFactory from '../system/panel'
 
 import desktopModel from '../model/desktop.model'
 
-const Panel = PanelFactory()
+// const Panel = PanelFactory()
 
 export default m.component([desktopModel], {
   view: (vnode, model) => {
